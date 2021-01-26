@@ -1,0 +1,686 @@
+.section {
+
+}
+
+#fp-nav ul li a span {
+    /*background: #00BAC7;*/
+}
+
+.section {
+    background-color: #1d1d1d;
+}
+
+.welcome-text {
+    font-size: 60px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-card-wrapper {
+    margin-left: 10%;
+}
+
+.Typist .Cursor {
+    display: inline-block;
+}
+
+.Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.contact-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    width: 100%;
+}
+
+.contact-btn > a {
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+}
+
+.contact-btn > a:hover {
+    background: #3a2364;
+    color: #fff;
+    border: 1px solid #3a2364;
+}
+
+
+/*glitch effect*/
+
+
+.glitch {
+    position: relative;
+    color: white;
+    mix-blend-mode: lighten;
+    text-align: center;
+}
+
+.glitch:before, .glitch:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: black;
+    clip: rect(0, 0, 0, 0);
+}
+
+.glitch:before {
+    left: -1px;
+    text-shadow: 1px 0 rgba(255, 0, 0, 0.7);
+}
+
+.glitch:after {
+    left: 1px;
+    text-shadow: -1px 0 rgba(0, 0, 255, 0.7);
+}
+
+.glitch:hover:before {
+    text-shadow: 4px 0 rgba(255, 0, 0, 0.7);
+    animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
+}
+
+.glitch:hover:after {
+    text-shadow: -5px 0 rgba(0, 0, 255, 0.7);
+    animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes glitch-loop-1 {
+    0% {
+        clip: rect(36px, 9999px, 9px, 0);
+    }
+    25% {
+        clip: rect(25px, 9999px, 99px, 0);
+    }
+    50% {
+        clip: rect(50px, 9999px, 102px, 0);
+    }
+    75% {
+        clip: rect(30px, 9999px, 92px, 0);
+    }
+    100% {
+        clip: rect(91px, 9999px, 98px, 0);
+    }
+}
+
+@keyframes glitch-loop-2 {
+    0% {
+        top: -1px;
+        left: 1px;
+        clip: rect(65px, 9999px, 119px, 0);
+    }
+    25% {
+        top: -6px;
+        left: 4px;
+        clip: rect(79px, 9999px, 19px, 0);
+    }
+    50% {
+        top: -3px;
+        left: 2px;
+        clip: rect(68px, 9999px, 11px, 0);
+    }
+    75% {
+        top: 0px;
+        left: -4px;
+        clip: rect(95px, 9999px, 53px, 0);
+    }
+    100% {
+        top: -1px;
+        left: -1px;
+        clip: rect(31px, 9999px, 149px, 0);
+    }
+}
+
+/*cards*/
+
+
+.card-wrapper {
+    display: flex;
+    width: 90%;
+    /*justify-content: space-around;*/
+    justify-content: center;
+}
+
+.card {
+    width: 280px;
+    height: 360px;
+    border-radius: 15px;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    margin-left: 5rem;
+}
+
+.card:hover {
+    transform: translateY(20px);
+
+}
+
+
+.card:hover:before {
+    opacity: 1;
+    background: rgba(0, 0, 0, .5);
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/*.card:before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border-radius: 15px;*/
+/*    background: rgba(0, 0, 0, 0.6);*/
+/*    z-index: 2;*/
+/*    transition: 0.5s;*/
+/*    opacity: 0;*/
+/*}*/
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.card > img {
+    webkit-filter: brightness(40%) !important;
+    filter: brightness(40%);;
+}
+
+
+.card .info {
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+}
+
+.card .info h1 {
+    margin: 0px;
+}
+
+.card .info p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.card .info a {
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    transition: 0.8s ease;
+}
+
+.card .info a:hover {
+    background: dodgerblue;
+    color: #fff;
+    background: dodgerblue;
+}
+
+
+/*footer*/
+
+.site-footer {
+    background-color: #26272b;
+    opacity: 0.7;
+    padding: 20px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.site-footer hr {
+    border-top-color: #bbb;
+    opacity: 0.5
+}
+
+.site-footer hr.small {
+    margin: 20px 0
+}
+
+.site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px
+}
+
+.site-footer a {
+    color: #737373;
+}
+
+.site-footer a:hover {
+    color: #fff !important;
+}
+
+
+.site-footer a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none
+}
+
+.footer-links li {
+    display: block
+}
+
+.footer-links a {
+    color: #737373
+}
+
+.footer-links a:active, .footer-links a:focus, .footer-links a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links.inline li {
+    display: inline-block
+}
+
+.site-footer .social-icons {
+    text-align: right
+}
+
+.site-footer .social-icons a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d
+}
+
+.copyright-text {
+    margin: 0
+}
+
+@media (max-width: 991px) {
+    .site-footer [class^=col-] {
+        margin-bottom: 30px
+    }
+}
+
+@media (max-width: 767px) {
+    .site-footer {
+        padding-bottom: 0
+    }
+
+    .site-footer .copyright-text, .site-footer .social-icons {
+        text-align: center
+    }
+}
+
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 4px
+}
+
+.social-icons li.title {
+    margin-right: 15px;
+    text-transform: uppercase;
+    color: #96a2b2;
+    font-weight: 700;
+    font-size: 13px
+}
+
+.social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear
+}
+
+.social-icons a:active, .social-icons a:focus, .social-icons a:hover {
+    color: #fff;
+    background-color: #29aafe
+}
+
+.social-icons.size-sm a {
+    line-height: 34px;
+    height: 34px;
+    width: 34px;
+    font-size: 14px
+}
+
+.social-icons a.facebook:hover {
+    background-color: #3b5998
+}
+
+.social-icons a.github:hover {
+    background-color: #161b22
+}
+
+.social-icons a.telegram:hover {
+    background-color: #25a3e1
+}
+
+
+@media (max-width: 767px) {
+    .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600
+    }
+}
+
+/*author*/
+
+.underline-author {
+    background-image: linear-gradient(120deg, #355C7D 0%, #6C5B7B, #C06C84 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+    margin-left: 5px;
+
+}
+
+.underline-author:hover {
+    background-size: 100% 88%;
+    color: #fff;
+}
+
+
+/*glitch*/
+
+
+.wrapper-glitch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-glitch h1.glitch {
+    color: white;
+    font-family: sans-serif;
+    font-weight: 800;
+    position: relative;
+    font-size: 100px;
+    padding: 30px;
+}
+
+.wrapper-glitch h1.glitch::before, .wrapper-glitch h1.glitch::after {
+    padding: 30px;
+    color: white;
+    content: "Glitch";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    top: 0;
+}
+
+.wrapper-glitch h1.glitch::before {
+    left: 3px;
+    text-shadow: -2px 0 red;
+    animation-name: glitch-animation-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse-alternate;
+}
+
+.wrapper-glitch h1.glitch::after {
+    left: -3px;
+    text-shadow: -2px 0 blue;
+    animation-name: glitch-animation-2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse-alternate;
+}
+
+@keyframes glitch-animation-1 {
+    0% {
+        clip: rect(63px, 350px, 64px, 30px);
+    }
+
+    5% {
+        clip: rect(25px, 350px, 99px, 30px);
+    }
+
+    10% {
+        clip: rect(66px, 350px, 17px, 30px);
+    }
+
+    15% {
+        clip: rect(19px, 350px, 87px, 30px);
+    }
+
+    20% {
+        clip: rect(74px, 350px, 76px, 30px);
+    }
+
+    25% {
+        clip: rect(20px, 350px, 19px, 30px);
+    }
+
+    30% {
+        clip: rect(98px, 350px, 71px, 30px);
+    }
+
+    35% {
+        clip: rect(64px, 350px, 90px, 30px);
+    }
+
+    40% {
+        clip: rect(37px, 350px, 43px, 30px);
+    }
+
+    45% {
+        clip: rect(81px, 350px, 1px, 30px);
+    }
+
+    50% {
+        clip: rect(8px, 350px, 25px, 30px);
+    }
+
+    55% {
+        clip: rect(119px, 350px, 127px, 30px);
+    }
+
+    60% {
+        clip: rect(34px, 350px, 4px, 30px);
+    }
+
+    65% {
+        clip: rect(42px, 350px, 65px, 30px);
+    }
+
+    70% {
+        clip: rect(98px, 350px, 119px, 30px);
+    }
+
+    75% {
+        clip: rect(129px, 350px, 38px, 30px);
+    }
+
+    80% {
+        clip: rect(101px, 350px, 133px, 30px);
+    }
+
+    85% {
+        clip: rect(40px, 350px, 46px, 30px);
+    }
+
+    90% {
+        clip: rect(146px, 350px, 21px, 30px);
+    }
+
+    95% {
+        clip: rect(15px, 350px, 77px, 30px);
+    }
+
+    100% {
+        clip: rect(72px, 350px, 46px, 30px);
+    }
+}
+
+@keyframes glitch-animation-2 {
+    0% {
+        clip: rect(107px, 350px, 20px, 30px);
+    }
+
+    5% {
+        clip: rect(41px, 350px, 24px, 30px);
+    }
+
+    10% {
+        clip: rect(93px, 350px, 42px, 30px);
+    }
+
+    15% {
+        clip: rect(18px, 350px, 49px, 30px);
+    }
+
+    20% {
+        clip: rect(88px, 350px, 44px, 30px);
+    }
+
+    25% {
+        clip: rect(98px, 350px, 12px, 30px);
+    }
+
+    30% {
+        clip: rect(142px, 350px, 21px, 30px);
+    }
+
+    35% {
+        clip: rect(128px, 350px, 24px, 30px);
+    }
+
+    40% {
+        clip: rect(18px, 350px, 5px, 30px);
+    }
+
+    45% {
+        clip: rect(69px, 350px, 91px, 30px);
+    }
+
+    50% {
+        clip: rect(139px, 350px, 20px, 30px);
+    }
+
+    55% {
+        clip: rect(77px, 350px, 17px, 30px);
+    }
+
+    60% {
+        clip: rect(135px, 350px, 18px, 30px);
+    }
+
+    65% {
+        clip: rect(124px, 350px, 146px, 30px);
+    }
+
+    70% {
+        clip: rect(105px, 350px, 35px, 30px);
+    }
+
+    75% {
+        clip: rect(54px, 350px, 30px, 30px);
+    }
+
+    80% {
+        clip: rect(65px, 350px, 114px, 30px);
+    }
+
+    85% {
+        clip: rect(135px, 350px, 9px, 30px);
+    }
+
+    90% {
+        clip: rect(80px, 350px, 138px, 30px);
+    }
+
+    95% {
+        clip: rect(4px, 350px, 56px, 30px);
+    }
+
+    100% {
+        clip: rect(53px, 350px, 5px, 30px);
+    }
+}
+

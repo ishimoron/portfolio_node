@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    overflow-x: hidden !important;
+    background-color: #1d1d1d !important;
+}
+
+::selection {
+    background: #ba4a00;
+}
+
+::-moz-selection {
+    background: #ba4a00;
+}
+
+::-webkit-selection {
+    background: #ba4a00;
+    color: #fff;
+}
+
+
+.body-hidden {
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+ul li {
+    list-style-type: none !important;
+}

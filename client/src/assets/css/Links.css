@@ -1,0 +1,57 @@
+body:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+a, a > span {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+a:before, a > span:before, a:after, a > span:after {
+    content: '';
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.links-effect {
+    padding: 10px;
+    color: #fff;
+    font-size: 70px;
+    line-height: 120%;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 97%;
+}
+
+.links-effect:before, .links-effect:after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #0883a4;
+}
+
+.links-effect:before {
+    border-width: 2px 0 2px 0;
+    transform: scaleX(0);
+}
+
+.links-effect:after {
+    border-width: 0 2px 0 2px;
+    transform: scaleY(0);
+}
+
+.links-effect:hover:before, .links-effect:hover:after {
+    transform: scale(1, 1);
+}
+
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+}

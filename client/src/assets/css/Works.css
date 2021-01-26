@@ -1,0 +1,99 @@
+.works-section {
+    min-height: 100vh;
+    background: #1d1d1d;
+}
+
+.works-wrapper {
+    padding: 100px 0 200px;
+}
+
+.works-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 11%);
+    margin: 5rem;
+}
+
+
+.card .info p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin: 10px 0 15px 0;
+}
+
+.card .info a {
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    transition: 0.8s ease;
+}
+
+.card .info a:hover {
+    background: dodgerblue;
+    color: #fff;
+    background: dodgerblue;
+}
+
+.wrap {
+    position: relative;
+}
+
+.text {
+    font-size: 15vw;
+    line-height: .8;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* background-color: pink; */
+}
+
+.wrap .text:nth-child(2),
+.wrap .text:nth-child(3),
+.crack {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.wrap .text:nth-child(1) {
+    clip-path: polygon(100% 0, 3% 0, 100% 97%);
+    transition: transform .6s;
+}
+
+.wrap .text:nth-child(2) {
+    clip-path: polygon(0 3%, 0% 100%, 97% 100%);
+}
+
+.wrap .text:nth-child(3) {
+    opacity: 1;
+    transition: opacity .1s .6s;
+}
+
+.crack {
+    background-color: hsl(0, 0%, 11%);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 3%, 3% 0, 100% 97%, 97% 100%);
+    transform: translate(-100%, -100%);
+    transition: transform .3s;
+}
+
+.wrap:hover .crack {
+    transform: translate(0, 0);
+}
+
+.wrap:hover .text:nth-child(3) {
+    opacity: 0;
+    transition: opacity .1s .3s;
+}
+
+.wrap:hover .text:nth-child(1) {
+    transition: transform .6s .5s;
+    transform: translate(10%, 10%);
+}
